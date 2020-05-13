@@ -1,0 +1,259 @@
+/* 个人中心样式部分 */
+.container_list{
+    height: 500px;
+    margin: 30px auto;
+    border: 1px solid #e1e2e5;
+    box-shadow:0 2px 4px rgba(0,0,0,.14);
+    display: flex;
+    color: #222;
+}
+.nav_list{
+    height: 100%;
+    background-color: #f4dbe6;
+    flex: 15%;
+    text-align: center;
+    font-size: 1em;
+}
+.nav_list ul{
+    box-sizing: border-box;
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.nav_list ul li{
+    flex: 1;
+    line-height: 40px;
+}
+.nav_list a{
+    color: #222;
+}
+.session_content{
+    flex: 85%;
+    height: 80%;
+}
+.container_list{
+    background-color: #fcfae4;
+}
+.container_list li a{
+    display: block;
+}
+.nav_list ul li:nth-last-of-type(-n+4):hover{
+    background-color: #8a5b7e21;
+}
+#myCenter{
+    background-color: skyblue;
+    color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 我的信息样式部分 */
+.session_box{
+    width: 100%;
+    height: 100%;
+}
+.session_title{
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    border-bottom: 1px solid #ddd;
+}
+.session_title span{
+    margin-left: 30px;
+}
+.session_box input{
+    color: #1f2d3d;
+}
+.input_name{
+    width: 225px;
+    height: 30px;
+    border-radius: 4px;
+    background-color: rgba(232, 231, 224, 0.75);;
+}
+.session_form{
+    margin:20px 150px 20px 30px;
+}
+.session_inner_box{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    display: flex;
+    margin-bottom: 10px;
+}
+.inner_key{
+    flex: 1;
+    text-align: right;
+    margin-right: 15px;
+}
+.inner_layout{
+    width: 225px;
+    height: 40px;
+    flex: 3;
+}
+.textarea_inner:hover{
+    border-color: #8391a5;
+}
+.textarea_inner:focus{
+    border-color: #a08998d4;
+}
+.textarea_box:hover{
+    border-color: #8391a5;
+}
+.textarea_box:focus{
+    border-color: #a08998d4;
+}
+.textarea_box{
+    line-height: 14px;
+    height: 60px;
+    box-sizing: border-box;
+    padding-top: 12px;
+}
+.my_textarea{
+    height: 60px;
+    line-height: 60px;
+}
+#sex_content{
+    border: none;
+    background: none;
+}
+.session_button{
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    background-color: skyblue;
+    color: white;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+/* 我的头像样式部分 */
+.session_avater{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.left_avater{
+    width: 180px;
+    height: 180px;
+    margin: 50px 20px 0 0;
+    position: relative;
+    background-color: #e5bcb3a8;
+}
+.left_avater:before{
+    position:absolute;
+    font-family: 'icomoon';
+    content: '\e9e9';
+    font-size: 100px;
+    color: #8c7e7e;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.right_avater{
+    width: 180px;
+    height: 180px;
+    margin: 50px 0 0 20px;
+}
+#form_avater{
+    overflow: hidden;
+}
+.left_avater form{
+    width: 180px;
+    height: 220px;
+}
+.img_container{
+    width: 180px;
+    height: 180px;
+}
+.inner_img{
+    position: absolute;
+    max-width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% ,-50%);
+}
+#choose{
+    display: block;
+    width: 80px;
+    height: 25px;
+    line-height: 25px;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 0.86em;
+    color: #6d757a;
+}
+#choose:hover{
+    color: #00b5e5;
+}
+#input_avater{
+    display: none;
+}
+.min{
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: pink;
+    position: absolute;
+}
+.crop_box{
+    top: 40px;
+    left: 40px;
+    position: absolute;
+    border: 2px solid white;
+    box-sizing: border-box;
+}
+.img_preview{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    overflow: hidden;
+    border: 1px solid #bbbbbb;
+    margin: 20px auto;
+}
+#renew{
+    width: 100px;
+    height: 30px;
+    background-color: skyblue;
+    color: white;
+    position: absolute;
+    bottom: 90px;
+}
+#renew:hover{
+    background-color: #59a8c8;
+}
+#renew_text{
+    position: absolute;
+    bottom: 150px;
+    color: #6d757a;
+}
+#p_text{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0.86em;
+    color: #6d757a;
+}
+/* 账号安全样式部分 */
+.session_safe{
+    width: 100%;
+    height: 80%;
+}
+.session_safe ul{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.session_safe ul li{
+    width: 30%;
+    line-height: 80px;
+}
+.session_safe>ul>li:nth-of-type(3n-1){
+    font-size: 0.86em;
+    color: #6d757a;;
+}
+.session_safe>ul>li>a{
+    font-size: 0.86em;
+}
+#user_id{
+    display: none;
+}

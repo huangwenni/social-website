@@ -1,0 +1,39 @@
+{{extend './base.html'}}
+{{block 'head'}}
+<link rel='stylesheet' href='/stylesheets/home.css'/>
+{{block 'style'}}{{/block}}
+{{/block}}
+{{block 'content'}}
+<div class="main_container">
+    <div class="inner_container">
+        <header class="home_header">
+            <div id="avater">
+                <div class="avater_inner">
+                    {{if avater}}
+                    <span><img src="{{avater}}" id="avater_img"/></span>
+                    {{else}}
+                    <span><img src="{{user.avater}}" id="avater_img"/></span>
+                    {{/if}}
+                    <span>{{user.userName}}</span>
+                    <span>{{user.signature}}<i></i></span>
+                    <a href="">好友</a>
+                    <a href="">我的收藏</a>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            <nav id="home_nav">
+                <ul>
+                    <li><a href="/myHome">我的主页</a></li>
+                    <li><a href="/myHome/album">照片墙</a></li>
+                    <li><a href="/myHome/messageBoard">留言板</a></li>
+                </ul>
+            </nav>
+            {{block 'home_content'}}{{/block}}
+        </div>
+    </div>
+</div>
+{{/block}}
+{{block 'script'}}
+<script src="/javascripts/myHome.js"></script>
+{{/block}}

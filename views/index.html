@@ -1,0 +1,116 @@
+<!-- 继承base.html -->
+{{extend './_layouts/base.html'}}
+{{block 'head'}}
+<link rel="stylesheet" href="/stylesheets/index.css"/>
+{{/block}}
+{{block 'content'}}
+<!-- 悬浮菜单栏 -->
+<nav id="upperMenu">
+    <ul>
+        <li><a href="/account/help">校园帮帮忙</a></li>
+        <li><a href="/account/information">校园资讯</a></li>
+        <li><a href="/account/brainstorm">头脑风暴</a></li>
+        <li><a href="/account/game">游戏区</a></li>
+    </ul>
+</nav>
+
+<div class="main_container">
+    <div class="inner_container">
+        <!-- header部分，切割轮播图 -->
+        <header id="index_head">
+            <ul>
+                <li class="carousel_li">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </li>
+                <li class="carousel_li">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </li>
+                <li class="carousel_li">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </li>
+                <li class="carousel_li">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </li>
+                <li class="carousel_li">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </li>
+            </ul>
+            <a href="javascript:;" class="pre">&lt;</a>
+            <a href="javascript:;" class="next">&gt;</a>
+        </header>
+
+        <!-- 漂流卡片 瀑布流部分-->
+        <section id="driftCard">
+            <div id="cardInput_button">
+                <div id="publish">
+                    <span>
+                        点此发布您的卡片
+                    </span>
+                </div>
+            </div>
+            <div class="overlay"></div>
+            <form action="" method="post" enctype="multipart/form-data" id="form_indexCard" class="upper_interface"
+                  name="form_indexCard">
+                <div class="indexCard_inner">
+                    <div id="indexCard_text">
+                        <ul>
+                            <li>
+                                <label for="indexCard_title">标题：</label>
+                                <input type="text" class="textarea_inner" id="indexCard_title" name="cardTitle"
+                                       placeholder="输入您的标题" required maxlength="12" autocomplete="off">
+                            </li>
+                            <li>
+                                <label for="indexCard_content" id="inner_key">描述：</label>
+                                <textarea placeholder="说点儿什么吧" rows="10" class="textarea_box" id="indexCard_content"
+                                          name="cardDescription"></textarea>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="indexCard_img">
+                        <label for="input_img" id="label_img"></label>
+                        <input type="file" accept="image/png,image/jpg,image/jpeg" id="input_img" name="cardImg">
+                    </div>
+                </div>
+                <input type="button" value="发布" id="indexCard_button"/>
+                <div class="close_btn">
+                    <i>×</i>
+                </div>
+            </form>
+            <div id="index_card">
+                <div class="card-container">
+                    <div class="item">
+                        <div class="item_box" id="item1"></div>
+                    </div>
+                    <div class="item">
+                        <div class="item_box" id="item2"></div>
+                    </div>
+                    <div class="item">
+                        <div class="item_box" id="item3"></div>
+                    </div>
+                    <div class="item">
+                        <div class="item_box" id="item4"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{{/block}}
+{{block 'script'}}
+<script src="/javascripts/index.js"></script>
+{{/block}}

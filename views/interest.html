@@ -1,0 +1,76 @@
+{{extend './_layouts/login_base.html'}}
+{{block 'content'}}
+<!-- 选择喜爱程度 -->
+<div class="score">
+    <i id="like_close">×</i>
+    <span>选择您的喜爱程度——<span id="category"></span></span>
+    <ul>
+        <li>
+            <a class="love"></a>
+            <span>1</span>
+        </li>
+        <li>
+            <a class="love"></a>
+            <span>2</span>
+        </li>
+        <li>
+            <a class="love"></a>
+            <span>3</span>
+        </li>
+        <li>
+            <a class="love"></a>
+            <span>4</span>
+        </li>
+        <li>
+            <a class="love"></a>
+            <span>5</span>
+        </li>
+    </ul>
+    <button id="confirm">确定</button>
+</div>
+<section id="interest_card">
+    <header id="hobby_title">
+        <span>选择您的兴趣</span>
+    </header>
+    <div class="interest_item">
+        <a class="item_text">时尚</a>
+    </div>
+    <div class="interest_item">
+        <a class="item_text">科技</a>
+    </div>
+    <div class="interest_item">
+        <a class="item_text">生活</a>
+    </div>
+    <div class="interest_item">
+        <a class="item_text">游戏</a>
+    </div>
+    <div class="interest_item">
+        <a class="item_text">学习</a>
+    </div>
+    <div class="interest_item">
+        <a class="item_text">数码</a>
+    </div>
+    <div class="interest_item">
+        <a class="item_text">美食</a>
+    </div>
+    <div class="interest_item">
+        <a class="item_text">旅游</a>
+    </div>
+    <div class="interest_item">
+        <a class="item_text">动漫</a>
+    </div>
+    <div class="interest_item">
+        <a class="item_text">音乐</a>
+    </div>
+    <div class="interest_item">
+        <a class="item_text">舞蹈</a>
+    </div>
+    <div class="interest_item">
+        <a class="item_text">运动</a>
+    </div>
+</section>
+<button id="upHobby">确定</button>
+{{/block}}
+{{block 'script'}}
+<script src="/javascripts/login.js"></script>
+{{/block}}

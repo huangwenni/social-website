@@ -1,0 +1,23 @@
+<!-- 继承home_base.html -->
+{{extend '../_layouts/home_base.html'}}
+
+{{block 'style'}}
+<style>
+    #home_nav ul li:nth-of-type(1) a{
+        border-bottom: none;
+    }
+    #home_nav ul li:nth-of-type(2) a{
+        border-bottom: 2px solid #1259a0;
+    }
+</style>
+{{/block}}
+
+{{block 'home_content'}}
+<div class="album_box">
+    <h3>照片墙</h3>
+    <div class="album">
+        <span id="no_album">—— 对方还没有上传任何照片哦 ——</span>
+        <div class="album_img"></div>
+    </div>
+</div>
+{{/block}}

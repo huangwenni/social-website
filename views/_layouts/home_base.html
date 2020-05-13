@@ -1,0 +1,36 @@
+{{extend './base.html'}}
+{{block 'head'}}
+<link rel='stylesheet' href='/stylesheets/home.css'/>
+{{block 'style'}}{{/block}}
+{{/block}}
+{{block 'content'}}
+<div class="main_container">
+    <div class="inner_container">
+        <header class="home_header">
+            <div id="avater">
+                <div class="avater_inner">
+                    <span><img src="{{friendData.avater}}" id="avater_img"/></span>
+                    <span id="home_userName">{{friendData.userName}}</span>
+                    <span id="signature">{{friendData.signature}}<i></i></span>
+                    <span>
+                        <button type="button" class="addFriend" onclick="ly.home.addF(this)" id="{{friendData._id.toString()}}">+&nbsp;&nbsp;好友</button>
+                     </span>
+                </div>
+            </div>
+        </header>
+        <div class="content">
+            <nav id="home_nav">
+                <ul>
+                    <li><a href="/home?id={{friendData._id.toString()}}">我的主页</a></li>
+                    <li><a href="/home/album?id={{friendData._id.toString()}}" id="home_album">照片墙</a></li>
+                    <li><a href="/home/messageBoard?id={{friendData._id.toString()}}">留言板</a></li>
+                </ul>
+            </nav>
+            {{block 'home_content'}}{{/block}}
+        </div>
+    </div>
+</div>
+{{/block}}
+{{block 'script'}}
+<script src="/javascripts/home.js"></script>
+{{/block}}

@@ -1,0 +1,42 @@
+<nav class="top_nav">
+    <div class="w nav_inner">
+        <div class="first_ul">
+            <ul>
+                {{if user}}
+                <li><a href="/index">首页</a> </li>
+                <li><a href="/myHome">我的主页</a> </li>
+                <li><a href="/friends">好友</a> </li>
+                <li><a href="/collection">我的收藏</a> </li>
+                {{else}}
+                <li><a href="/index">首页</a> </li>
+                {{/if}}
+            </ul>
+        </div>
+        <div class="second_ul">
+            <ul>
+                {{if user}}
+                <li><a href="/logout" title="退出"></a></li>
+                <li><a href="/post">动态</a> </li>
+                <li><a>消息</a>
+                    <ul id="menuBar">
+                        <span id="triangle-down"></span>
+                        <li id="base_appli"><a href="/message/application">好友申请</a></li>
+                    </ul>
+                </li>
+                <li ><a href="/personal/message">个人中心</a></li>
+                <span class="user_avater" id="{{user._id.toString()}}" title="{{user.userName}}">
+                    <a href="/myHome" id="head_avater">
+                            <img src="{{user.avater}}"/>
+                    </a>
+                </span>
+                <li class="search_box"><input type="text" class="search"></li>
+                {{else}}
+                <li></li>
+                <li><a href="/register">注册</a></li>
+                <li><a href="/">登录</a></li>
+                <li><li class="search_box"><input type="text" class="search"></li></li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</nav>

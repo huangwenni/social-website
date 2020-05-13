@@ -1,0 +1,30 @@
+<!-- 继承home_base.html -->
+{{extend '../_layouts/myHome_base.html'}}
+
+{{block 'style'}}
+<style>
+    #home_nav ul li:nth-of-type(1) a{
+        border-bottom: none;
+    }
+    #home_nav ul li:nth-of-type(2) a{
+        border-bottom: 2px solid #1259a0;
+    }
+</style>
+{{/block}}
+{{block 'home_content'}}
+<div class="album_box">
+    <h3>照片墙</h3>
+    <form enctype="multipart/form-data" id="form_album">
+        <label for="upImg" id="upImg_button">
+            <span id="myAlbum">制作我的照片墙</span>
+            <input type="file" accept="image/png,image/jpg,image/jpeg" id="upImg" class="hidden" name="photo"/>
+        </label>
+        <span id="limit">图片支持JPG、PNG、JPEG格式，图片需小于2M，上限5张</span>
+        <span id="reset" onclick="ly.myHome.reset()">重置</span>
+    </form>
+    <div class="album">
+        <span id="no_album">—— 您还没有上传任何照片哦 ——</span>
+        <div class="album_img"></div>
+    </div>
+</div>
+{{/block}}

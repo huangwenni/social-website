@@ -1,0 +1,40 @@
+<!-- 继承base.html -->
+{{extend '../_layouts/base.html'}}
+
+{{block 'head'}}
+<link rel='stylesheet' href='/stylesheets/myFriends.css'/>
+{{/block}}
+
+{{block 'content'}}
+<div class="main_container">
+    <div class="inner_container myFriends_container">
+        {{block 'chatContent'}}{{/block}}
+        <div class="myFriends_inner">
+            <div id="friends_title"> 我的好友</div>
+            <div class="friends_box">
+                {{if friendMessage.length !== 0}}
+                {{each friendMessage}}
+                <div class="friends_content">
+                    <div class="friends_avater">
+                        <img src="{{$value.avater}}"/>
+                    </div>
+                    <div class="friends_text">
+                        <span id="friend_name">{{$value.userName}}</span>
+                        <span>{{$value.signature}}</span>
+                        <a href="/friends/chat?id={{$value._id.toString()}}">私信</a>
+                        <button type="button" id="{{$value._id.toString()}}" onclick="ly.friends.del(this)">删除好友</button>
+                    </div>
+                </div>
+                {{/each}}
+                {{else}}
+                <span id="no_friend">—— 您暂时还没有好友哦 ——</span>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
+{{/block}}
+
+{{block 'script'}}
+<script src="/javascripts/friends.js"></script>
+{{/block}}

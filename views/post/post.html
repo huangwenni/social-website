@@ -1,0 +1,93 @@
+<!-- 继承base.html -->
+{{extend '../_layouts/base.html'}}
+{{block 'head'}}
+<link rel='stylesheet' href='/stylesheets/post.css'/>
+{{/block}}
+
+{{block 'content'}}
+<div class="main_container">
+    <div class="inner_container post_box">
+        <aside class="myCard">
+            <div class="bgc"></div>
+            <div class="myCard_img">
+                {{if avater}}
+                <img src="{{avater}}"/>
+                {{else}}
+                <img src="{{user.avater}}"/>
+                {{/if}}
+            </div>
+            <span>{{user.userName}}</span>
+            <div class="myPost">
+                <span>{{count}}</span>
+                <span>动态</span>
+            </div>
+        </aside>
+        <section class="post_content">
+            <section class="post_editor">
+                <form action="" method="post" id="form_post" enctype="multipart/form-data">
+                    <div class="editor_inner">
+                        <textarea placeholder="说点儿什么吧" rows="3" class="textarea_editor" name="message" id="textarea_editor"></textarea>
+                    </div>
+                    <span class="emoji"></span>
+                    <label for ="input_img"></label>
+                    <input type="file" accept="image/png,image/jpg,image/jpeg" id="input_img" name="img"/>
+                    <button type="submit" id="post_button">发布</button>
+                </form>
+            </section>
+            <article class="post_article">
+                {{each postMessage}}
+                <div class="article_item">
+                    <i class="setUp"><a></a></i>
+                    <div class="author">
+                        <div class="authorImg_box">
+                            <div class="author_avater">
+                                <img src="{{$value.avater}}"/>
+                            </div>
+                        </div>
+                        <div class="author_name">
+                            <span><a href="">{{$value.userName}}</a></span>
+                            <span>{{@$value.time}}</span>
+                        </div>
+                    </div>
+                    <div class="article_content">
+                        <img src="{{$value.img}}" style="width: 15%;margin: 0 auto"/>
+                        <div style="margin-top: 5px">{{$value.message}}</div>
+                    </div>
+                    <div class="article_bottom">
+                        <ul>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                        </ul>
+                    </div>
+                </div>
+                {{/each}}
+            </article>
+        </section>
+    </div>
+</div>
+{{/block}}
+
+{{block 'script'}}
+<script>
+        $('#post_button').on('click',function (e) {
+            e.preventDefault();
+            let formData = new FormData($('#form_post')[0]);
+            $.ajax({
+                url:'/post/post',
+                type:'post',
+                data:formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success:(response)=>{
+                    if(response.code === 0){
+                        alert('发布成功！');
+                        window.location.href = '/post'
+                    }
+                }
+            })
+        })
+</script>
+{{/block}}

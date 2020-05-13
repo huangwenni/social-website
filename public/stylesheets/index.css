@@ -1,0 +1,440 @@
+/* 悬浮菜单栏部分 */
+#upperMenu{
+    width: 8rem;
+    height: 12rem;
+    background-color: #f4dbe6;
+    position: fixed;
+    z-index: 9999;
+    right: 2rem;
+    bottom: 10rem;
+}
+#upperMenu>ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: wrap column;
+}
+#upperMenu>ul>li{
+    flex: 1;
+    text-align: center;
+    font-size: 1.3em;
+    line-height: 3rem;
+}
+#upperMenu>ul>li:nth-of-type(odd){
+    background-color: #dab2cf63;
+}
+#upperMenu>ul>li:hover{
+    background-color: #b78dac63;
+    cursor: pointer;
+}
+#upperMenu>ul>li>a{
+    color: #670000;
+}
+/* 切割轮播图部分 */
+#index_head{
+    width: 100%;
+    height: 300px;
+    position: relative;
+    margin-top: 30px;
+}
+#index_head>ul{
+    width: 100%;
+    height: 100%;
+    transform: rotate3d(1,1,0,0deg);
+    transform-style: preserve-3d;
+    display: flex;
+}
+#index_head>ul>li{
+    flex: 1;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    margin-right: -1px;
+}
+#index_head>ul>li>span{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#index_head>ul>li>span:nth-of-type(1){
+    background: url("../images/carousel-1.jpg");
+    transform: translateZ(150px);
+}
+#index_head>ul>li>span:nth-of-type(2){
+    background: url("../images/carousel-2.jpg");
+    transform: translateY(-150px) rotateX(90deg);
+}
+#index_head>ul>li>span:nth-of-type(3){
+    background: url("../images/carousel-3.jpg");
+    transform: translateZ(-150px) rotateX(180deg);
+}
+#index_head>ul>li>span:nth-of-type(4){
+    background: url("../images/carousel-4.jpg");
+    /* 往z轴正方向偏移 */
+    transform: translateY(150px) rotateX(-90deg);
+}
+#index_head>ul>li:nth-of-type(2)>span{
+    background-position: -100% 0;
+}
+#index_head>ul>li:nth-of-type(3)>span{
+    background-position: -200% 0;
+}
+#index_head>ul>li:nth-of-type(4)>span{
+    background-position: -300% 0;
+}
+#index_head>ul>li:nth-of-type(5)>span{
+    background-position: -400% 0;
+}
+.pre,.next{
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    position: absolute;
+    top: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 40px;
+    transform: translate(0,-50%);
+    background-color: rgba(93, 37, 37, 0.5)
+}
+.pre{
+    left: 0;
+}
+.next{
+    right: 0;
+}
+/* 漂流卡片部分 */
+
+#driftCard{
+    width: 100%;
+    height: 100%;
+}
+#index_title{
+    width: 100%;
+    height: 35px;
+    background-color: #8391a5;
+    color: white;
+    font-size: 1.14em;
+    line-height: 35px;
+    text-align: center;
+}
+#cardInput_button{
+    margin-top: 20px;
+    width: 100%;
+    height: 100px;
+    background:#f4dbe6;
+    padding: 8px;
+    box-sizing: border-box;
+    color:#777;
+}
+#cardInput_button:hover{
+    background:#f4dbe69c;
+    color: #695e5e;
+}
+#publish{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 2px dashed #695e5e;
+    cursor: pointer;
+}
+#publish>span{
+    display: block;
+    width: 200px;
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 84px;
+}
+.indexCard_inner{
+    width: 100%;
+    padding: 20px 30px 30px 30px;
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+}
+.indexCard_inner:before{
+    content: '编辑您的分享';
+    position: absolute;
+    font-size: 1.36em;
+    color: #222;
+    font-family: "helvetica neue",arial,sans-serif;
+}
+#indexCard_text{
+    flex: 2;
+    margin-top: 50px;
+}
+#indexCard_text>ul>li{
+    margin-bottom: 20px;
+}
+#indexCard_text>ul>li>label{
+    font-size: 1.14em;
+    color: #777;;
+}
+#indexCard_img{
+    flex: 1;
+    border: 1px solid #a7a7a7;
+    margin-top: 50px;
+    height: 265px;
+}
+.textarea_box{
+    border-radius: 4px;
+    background-color: rgba(232, 231, 224, 0.75);;
+    border: 1px solid #bfcbd9;
+    padding-left: 10px;
+    line-height: 14px;
+    height: 60px;
+    box-sizing: border-box;
+    padding-top: 12px;
+}
+#inner_key{
+    position:relative;
+    top: -180px;
+}
+#indexCard_title{
+    width: 300px;
+    height: 50px;
+    background-color: #fcfcfc;
+    font-size: 1em;
+    font-family: Arial;
+}
+#indexCard_content{
+    width: 300px;
+    height: 200px;
+    background-color: #fcfcfc;
+    font-size: 1em;
+    line-height: 20px;
+    font-family: Arial;
+}
+input::-webkit-input-placeholder{
+    color:#bbb;
+    font-size: 1.14em;
+}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    color:#bbb;
+    font-size: 1.14em;
+}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    color:#bbb;
+    font-size: 1.14em;
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+    color:#bbb;
+    font-size: 1.14em;
+}
+textarea::-webkit-input-placeholder{
+    color:#bbb;
+    font-size: 1.14em;
+}
+textarea::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    color:#bbb;
+    font-size: 1.14em;
+}
+textarea:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    color:#bbb;
+    font-size: 1.14em;
+}
+textarea:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+    color:#bbb;
+    font-size: 1.14em;
+}
+#indexCard_button{
+    position:absolute;
+    bottom: 20px;
+    right: 30px;
+    width: 80px;
+    height: 30px;
+    background-color: skyblue;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+}
+.close_btn{
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    cursor: pointer;
+    color:#777777;
+    font-size: 3em;
+}
+.close_btn:hover{
+    color: #444;
+}
+#label_img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+#label_img:before{
+    font-family: 'icomoon';
+    content: '\e9e9';
+    position: absolute;
+    font-size: 100px;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #9a8e9785;
+}
+#label_img:after{
+    content: '点此上传图片';
+    color: #777777;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#input_img{
+    display: none;
+}
+#index_card{
+    width: 100%;
+    height: 100%;
+}
+.card-container{
+    width: 100%;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.card-container>.item{
+    width: 21%;
+    margin: 20px 10px 10px 10px;
+}
+.item_inner{
+     transition: all 0.3s ease-in-out;
+     background-color: white;
+     margin-top: 15px;
+ }
+.item_inner:hover{
+    transform: scale(1.05);
+    cursor:pointer;
+    box-shadow:0px 3px 2px 1px #999;
+}
+.card_img>img{
+    width: 100%;
+}
+.item_text>span{
+    margin: 5px 10px 10px 10px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}
+.card_author{
+    width: 100%;
+    height: 60px;
+    border-top: 1px solid #f2f2f2;
+    position:relative;
+}
+.card_author>.card_avater{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 10px;
+    float: left;
+    overflow: hidden;
+}
+.card_avater>img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+#card_name{
+    color: #8c7e7e;
+    position: absolute;
+    top: 14px;
+    font-size: 0.86em;
+}
+#card_name a{
+    color: #8c7e7e;
+}
+#card_name a:hover{
+    color: #8c7e7e;
+    border-bottom: 1px solid #8c7e7e;
+}
+#card_title{
+     color: #8c7e7e;
+     position: absolute;
+     top: 31px;
+     font-size: 0.86em;
+}
+#item_a{
+    color: #222222;
+    font-size: 1em;
+}
+#card_id{
+    display: none;
+}
+
+/* 卡片详情 */
+.article{
+    background-color: #edf3f2;
+    padding: 30px 20px;
+}
+.article>header>span{
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.article>header>span:nth-of-type(1){
+    color: #695e5e;
+    font-size: 1.23em;
+}
+.article>header>span:nth-of-type(2){
+    color: #695e5e;
+    font-size: 1.14em;
+}
+.article>header>span:nth-of-type(2) a{
+    color: #695e5e;
+}
+.article>header>span:nth-of-type(2) a:hover{
+    border-bottom: 1px solid #695e5e;
+    cursor: pointer;
+}
+.article>header>span:nth-of-type(3){
+    color: #695e5e;
+    font-size: 1em;
+}
+#detailedContent>img{
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+#detailedContent>span{
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.collection{
+    position: absolute;
+    font-family: 'icomoon';
+    top: 10px;
+    left: 10px;
+    font-size: 40px;
+    color: #99a2aa;
+    cursor: pointer;
+}
+.collection:hover:before{
+    position: absolute;
+    font-family: 'icomoon';
+    content: '\e90a';
+    color: #a10000;
+}
+.hidden_id{
+    display: none;
+}
+#detail_pre{
+    width: 100%;
+}
+

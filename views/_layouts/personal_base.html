@@ -1,0 +1,31 @@
+<!-- 继承base.html -->
+{{extend './base.html'}}
+{{block 'head'}}
+<link rel='stylesheet' href='/stylesheets/personal.css'/>
+<link rel='stylesheet' href='/stylesheets/cropper.css'/>
+{{block 'style'}}{{/block}}
+{{/block}}
+
+{{block 'content'}}
+<div class="main_container">
+    <div class="inner_container container_list">
+        <nav class="nav_list">
+            <ul>
+                <li id="myCenter">个人中心</li>
+                <li id="myMessage"><a href="/personal/message"><i></i>我的信息</a></li>
+                <li id="myAvater"><a href="/personal/avater"> <i></i>我的头像</a></li>
+                <li id="mySafe"><a href="/personal/safe" > <i></i>账号安全</a></li>
+                <li id="myRecord"><a href="/personal/record" > <i></i>登录记录</a></li>
+            </ul>
+        </nav>
+        <section class="session_content">
+            {{block 'session_content'}}{{/block}}
+        </section>
+    </div>
+</div>
+{{/block}}
+
+{{block 'script'}}
+<script src="/javascripts/cropper.min.js"></script>
+<script src="/javascripts/personal.js"></script>
+{{/block}}

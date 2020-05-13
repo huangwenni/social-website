@@ -1,0 +1,26 @@
+{{extend './_layouts/login_base.html'}}
+{{block 'content'}}
+<div class="session">
+    <img src="/images/logo.png" class="_logo"/>
+    <form class="form_session" id="form_register" action="/register_post" method="post">
+        <div class="form_content">
+            <input type="text" required class="form_control" name="school" placeholder="请输入学校" autocomplete="off">
+            <input type="text" required class="form_control" name="studentNumber" placeholder="请输入学号" autocomplete="off"
+                   id="number">
+            <input type="text" required class="form_control" name="studentName" id="studentName" placeholder="请输入姓名"
+                   autocomplete="off">
+            <input type="text" required class="form_control" name="userName" id="userName" placeholder="请输入昵称" autocomplete="off"
+                   spellcheck="false">
+            <input type="password" required class="form_control" name="password" placeholder="请输入密码" autocomplete="off"
+                   id="password">
+        </div>
+        <div id="register_button">
+            <button type="submit" class="fl" id="register_hover"><a>注册</a></button>
+        </div>
+        <span><a href="/">已有账号，直接登录</a></span>
+    </form>
+</div>
+{{/block}}
+{{block 'script'}}
+<script src="/javascripts/login.js"></script>
+{{/block}}

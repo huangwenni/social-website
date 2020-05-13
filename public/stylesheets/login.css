@@ -1,0 +1,264 @@
+/* 登陆注册页面的样式 */
+body{
+    background: url("../images/login.jpeg") center 0 no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.session{
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 400px;
+    height: 370px;
+    position: absolute;
+}
+._logo{
+    position: absolute;
+    top: -30px;
+    left: 47px;
+    opacity: 0.8;
+}
+#login_form_content {
+    margin-top: 125px;
+}
+.form_session{
+    width: 100%;
+    height: 100%;
+    background:rgba(0, 51, 130, 0.24);
+    border-radius: 50px;
+    overflow: hidden;
+}
+.form_content{
+    width: 100%;
+    margin-top: 80px;
+}
+input::-webkit-input-placeholder{
+    color:#fff;
+}
+input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+    color:#fff;
+}
+input:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+    color:#fff;
+}
+input:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+    color:#fff;
+}
+.form_control{
+    display: block;
+    width: 200px;
+    padding: 5px 5px 5px 10px;
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    margin: 10px auto;
+    line-height: 20px;
+    background-color: rgba(39, 55, 82, 0.39);
+    font-size: 0.86em;
+    box-sizing: border-box;
+}
+.form_control:focus{
+    color: #752a45;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: background-color .5s cubic-bezier(.645,.045,.355,1);
+}
+.form_session .button{
+    height: 30px;
+    width: 170px;
+    margin:30px auto;
+}
+#register_link:hover,#login_submit:hover,#register_hover:hover{
+    background-color: rgba(58, 121, 183, 0.9);
+    transition: background-color .2s cubic-bezier(.645,.045,.355,1);
+}
+#register_hover>a{
+    color: white;
+}
+#login_submit,#register_link{
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    background-color: #1259a0;
+    border-radius: 5px;
+    color: white;
+    line-height: 35px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+#register_button{
+    height: 30px;
+    width: 200px;
+    margin:30px auto 0;
+}
+#register_button button{
+    width: 200px;
+    height: 30px;
+    background-color: #1259a0;
+    border-radius: 5px;
+    color: white;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+.form_session span{
+    display: block;
+    width: 100%;
+    height: 20px;
+    text-align: right;
+    padding: 0 100px;
+    box-sizing: border-box;
+}
+.form_session span a{
+    font-size: 0.71em;
+    color: #00a1d6;
+}
+
+/* 兴趣偏好收集页面 */
+#hobby_title{
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    color: #eaecff;
+    font-size: 2em;
+}
+#interest_card{
+    width: 65%;
+    height: 85%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: auto;
+    margin-bottom: 60px;
+ }
+.interest_item{
+    width: 20%;
+    height: 150px;
+    background-color: #e1cde894;
+    margin: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #00000070;
+    position: relative;
+}
+.interest_item>a{
+    display: block;
+    height: 100%;
+    text-align: center;
+    line-height: 150px;
+    font-size: 2em;
+    color: #422852;
+    text-shadow: 2px 4px 12px #00000085;
+}
+.interest_item>a:hover{
+    background-color: #1a2a50c9;
+    border-radius: 10px;
+    color: #e8e4e4;
+}
+.selected{
+    color:#e8e4e4!important;
+    background-color: #1a2a50c9;
+    border-radius:10px;
+}
+.score{
+    width: 500px;
+    height: 250px;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px #00000070;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    z-index: 999;
+}
+.score>span{
+    display: block;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.2em;
+}
+.score>ul{
+    width: 80%;
+    margin: 20px auto;
+    height: 100px;
+    display: flex;
+}
+.score>ul>li{
+    flex: 1;
+    margin: 10px;
+}
+.score>ul>li>a{
+    font-size: 4em;
+    color: rgba(103, 0, 0, 0.29);
+    font-family: 'icomoon';
+    display: block;
+    width: 100%;
+    height: 70%;
+}
+.score>ul>li>a:hover{
+    color: #670000;
+}
+.score>ul>li>span{
+    display: block;
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    line-height: 24px;
+    font-size: 1.5em;
+    color: #752a45;
+}
+.score>button{
+    width: 80px;
+    height: 30px;
+    background-color: rgb(153, 162, 170);
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.score i{
+    cursor: pointer;
+    position: absolute;
+    font-size: 2em;
+    color: #777777;
+    right: 10px;
+    top: 7px;
+}
+.show_score{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    font-family: 'icomoon';
+    color: #ca5f5f;
+    font-size: 4em;
+    z-index: 55;
+    top: -13px;
+    left: -13px;
+}
+.show_score>span{
+    color: white;
+    font-size: 0.4em;
+    position: absolute;
+    top: 12px;
+    left: 20px;
+}
+#upHobby{
+    width:100px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #282d6f;
+    color: white;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+}

@@ -1,0 +1,55 @@
+<!-- 继承home_base.html -->
+{{extend '../_layouts/home_base.html'}}
+
+{{block 'style'}}
+<style>
+    #home_nav ul li:nth-of-type(1) a{
+        border-bottom: none;
+    }
+    #home_nav ul li:nth-of-type(3) a{
+        border-bottom: 2px solid #1259a0;
+    }
+</style>
+{{/block}}
+
+{{block 'home_content'}}
+<div class="messageBoard">
+    <h3>发布您的留言</h3>
+    <section class="editor" id="board_editor">
+        <form  id="form_board">
+            <input type="text" name="userName" value="{{friendData.userName}}" class="hidden"/>
+            <div class="editor_inner">
+                <textarea placeholder="说点儿什么吧" rows="3" class="textarea_editor" id="MB_message"></textarea>
+            </div>
+            <div class="editor_button">
+                <span class="emoji fl"></span>
+                <button class="fr" id="MB_btn">发表</button>
+            </div>
+            <input class="hidden" name = "currentUser" value="{{user.userName}}"/>
+        </form>
+    </section>
+    <h3 >留言</h3>
+    {{if board.length !== 0}}
+    {{each board}}
+    <section class="board_content">
+        <div class="board_avater">
+            <img src="{{$value.avater}}"/>
+        </div>
+        <div class="board_text">
+            <span>
+                {{$value.userName}}
+            </span>
+            <span>
+                {{$value.message}}
+            </span>
+            <span>
+                {{@$value.time}}
+            </span>
+        </div>
+    </section>
+    {{/each}}
+    {{else}}
+    <span id="no_msg">—— 对方还没有留言哦 ——</span>
+    {{/if}}
+</div>
+{{/block}}

@@ -1,0 +1,71 @@
+{{extend '../_layouts/personal_base.html'}}
+
+{{block 'style'}}
+<style type="text/css">
+    #myCenter{
+        background-color: #8a5b7e;
+        color: white;
+    }
+    #myMessage a{
+        background-color: #8a5b7e63;
+        color: white;
+    }
+</style>
+{{/block}}
+
+{{block 'session_content'}}
+<div class="session_box">
+    <div class="session_title">
+        <span><i></i>我的信息</span>
+    </div>
+    <div class="session_form">
+        <form action="/personal/message" id="form_myMessage" method="post">
+            <div class="session_inner_box">
+                <label for="session_name" class="inner_key">昵称：</label>
+                <input type="text" class="textarea_inner inner_layout" id="session_name" placeholder="您的昵称" value="{{user.userName}}" required maxlength="20" name="userName" autocomplete="off" spellcheck="false">
+            </div>
+            <div class="session_inner_box my_textarea">
+                <span class="inner_key">个性签名：</span>
+                <textarea placeholder="设置您的个性签名" rows="3" class="inner_layout textarea_box" name="signature" maxlength="16" spellcheck="false">{{user.signature}}</textarea>
+            </div>
+            <div class="session_inner_box">
+                <span class="inner_key">性别：</span>
+                <div class="textarea_inner inner_layout" id="sex_content">
+                    {{if user.gender == 1}}
+                    男<input type="radio" value="1" name="gender" checked/>
+                    女<input type="radio" value="0" name="gender"/>
+                    保密<input type="radio" value="-1" name="gender"/>
+                    {{else if user.gender == 0}}
+                    男<input type="radio" value="1" name="gender"/>
+                    女<input type="radio" value="0" name="gender" checked/>
+                    保密<input type="radio" value="-1" name="gender"/>
+                    {{else if user.gender == -1}}
+                    男<input type="radio" value="1" name="gender"/>
+                    女<input type="radio" value="0" name="gender"/>
+                    保密<input type="radio" value="-1" name="gender" checked/>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="session_inner_box">
+                <span class="inner_key">出生日期：</span>
+                <input type="date" class="textarea_inner inner_layout" name="birthday" id="birthday" value="{{user.birthday}}">
+            </div>
+            <div class="session_inner_box">
+                <label for="session_specialty" class="inner_key">专业：</label>
+                <input type="text" class="textarea_inner inner_layout" id="session_specialty" placeholder="您的专业" maxlength="16" name="specialty" autocomplete="off" value="{{user.specialty}}" spellcheck="false">
+            </div>
+            <div class="session_inner_box">
+                <label for="session_email" class="inner_key">邮箱：</label>
+                <input type="email" class="textarea_inner inner_layout" id="session_email" placeholder="您的邮箱" maxlength="16" name="email" autocomplete="off" value="{{user.email}}" spellcheck="false">
+            </div>
+            <div class="session_inner_box my_textarea">
+                <span class="inner_key">个人介绍：</span>
+                <textarea placeholder="设置您的个人介绍" rows="3" class="inner_layout textarea_box" name="introduce" maxlength="100" spellcheck="false">{{user.introduce}}</textarea>
+            </div>
+            <div class="session_inner_box">
+                <button type="submit" class="session_button">保存</button>
+            </div>
+        </form>
+    </div>
+</div>
+{{/block}}

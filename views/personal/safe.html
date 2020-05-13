@@ -1,0 +1,41 @@
+{{extend '../_layouts/personal_base.html'}}
+
+{{block 'style'}}
+<style type="text/css">
+    #myCenter{
+        background-color: #8a5b7e;
+        color: white;
+    }
+    #mySafe a{
+        background-color: #8a5b7e63;
+        color: white;
+    }
+</style>
+{{/block}}
+
+{{block 'session_content'}}
+<div class="session_box">
+    <div class="session_title">
+        <span><i></i>账号安全</span>
+    </div>
+    <div class="session_safe">
+        <ul>
+            <li>绑定邮箱</li>
+            <li>未绑定邮箱</li>
+            <li><a>绑定邮箱</a></li>
+            <li>密保问题</li>
+            <li>未设置密保</li>
+            <li><a>设置密保</a></li>
+            <li>绑定QQ号</li>
+            <li>未绑定QQ号</li>
+            <li><a>绑定QQ号</a></li>
+            <li>设置密码</li>
+            <li>已设置</li>
+            <li><a>设置密码</a></li>
+            <li>绑定手机</li>
+            <li>未绑定手机号</li>
+            <li><a>绑定手机</a></li>
+        </ul>
+    </div>
+</div>
+{{/block}}

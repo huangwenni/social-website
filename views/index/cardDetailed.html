@@ -1,0 +1,26 @@
+<!-- 继承base.html -->
+{{extend '../_layouts/base.html'}}
+{{block 'head'}}
+<link rel="stylesheet" href="/stylesheets/index.css"/>
+{{/block}}
+{{block 'content'}}
+<div class="main_container">
+    <div class="inner_container">
+        <i class="collection" id="{{cardDetailed._id}}" onclick="ly.card.collection(this)"></i>
+        <article class="article">
+            <header>
+                <span><h3>{{cardDetailed.cardTitle}}</h3></span>
+                <span><a href="/home?id={{cardDetailed.userId}}">{{cardDetailed.userName}}</a></span>
+                <span>{{@cardDetailed.time}}</span>
+            </header>
+            <section id="detailedContent">
+                <img src="{{cardDetailed.cardImg}}">
+                <span><pre id="detail_pre">{{cardDetailed.cardDescription}}</pre></span>
+            </section>
+        </article>
+    </div>
+</div>
+{{/block}}
+{{block 'script'}}
+<script src="/javascripts/detail.js"></script>
+{{/block}}

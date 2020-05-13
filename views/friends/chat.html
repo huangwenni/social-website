@@ -1,0 +1,74 @@
+{{extend './myFriends.html'}}
+
+{{block 'chatContent'}}
+<div class="overlay"></div>
+<div class="chat_box upper_interface">
+    <a id="chat_close" href="/friends">×</a>
+    <div id="chat_userName">
+        <span id="{{toMsg._id.toString()}}">{{toMsg.userName}}</span>
+    </div>
+    <div id="chat_sroll">
+        <div id="chat_content">
+            {{each record}}
+            <!-- 判断发送方是否为当前账号，如果是当前账号，则渲染在聊天框右侧；如果不是当前账号，则渲染在聊天框左侧 -->
+            {{if $value.sendId== user._id.toString()}}
+            <div class="chat_inner"><div class="chat_img chat_right"><img src="{{user.avater}}"/></div><span class="fr chatColor-r">{{$value.message}}</span></div>
+            {{else}}
+            <div class="chat_inner"><div class="chat_img chat_left"><img src="{{toMsg.avater}}"/></div><span class="fl chatColor-l">{{$value.message}}</span></div>
+            {{/if}}
+            {{/each}}
+        </div>
+    </div>
+    <form>
+        <textarea id="chat_editor"></textarea>
+        <button type="submit" id="chat_button" onclick="return false">发送</button>
+    </form>
+</div>
+{{/block}}
+
+{{block 'script'}}
+<script src="/javascripts/socket.io.js"></script>
+<script>
+        $('#chat_sroll').scrollTop($('#chat_sroll')[0].scrollHeight);
+
+        const socket = io.connect('/');
+        let sendId = $('#head_avater').parent()[0].id;
+        let toId = $('#chat_userName').find('span')[0].id;
+
+        //按Enter键触发事件
+        $('body').keydown(e=>{
+            if (e.keyCode == 13) {
+                e.preventDefault();
+                $('#chat_button').click();
+            }
+        });
+        socket.emit('setName',{toId,sendId});
+        $('#chat_button').on('click',()=> {
+            let message = $('#chat_editor').val();
+            socket.emit('sayTo',{sendId,toId,message});
+        });
+        socket.on('msg_to', msg => {
+            let data = `
+        <div class="chat_inner">
+            <div class="chat_img chat_left">
+                <img src="{{toMsg.avater}}"/>
+            </div>
+            <span class="fl chatColor-l">${msg}</span>
+        </div>`;
+            $('#chat_content').append(data);
+            $('#chat_sroll').scrollTop($('#chat_sroll')[0].scrollHeight);
+        });
+        socket.on('msg_my', msg => {
+            let data = `
+        <div class="chat_inner">
+            <div class="chat_img chat_right">
+                <img src="{{user.avater}}"/>
+            </div>
+            <span class="fr chatColor-r">${msg}</span>
+        </div>`;
+            $('#chat_content').append(data);
+            $('#chat_editor').val('');
+            $('#chat_sroll').scrollTop($('#chat_sroll')[0].scrollHeight);
+        });
+</script>
+{{/block}}

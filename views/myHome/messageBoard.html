@@ -1,0 +1,55 @@
+<!-- 继承home_base.html -->
+{{extend '../_layouts/myHome_base.html'}}
+{{block 'style'}}
+<style>
+    #home_nav ul li:nth-of-type(1) a{
+        border-bottom: none;
+    }
+    #home_nav ul li:nth-of-type(3) a{
+        border-bottom: 2px solid #1259a0;
+    }
+</style>
+{{/block}}
+{{block 'home_content'}}
+
+<div class="messageBoard">
+    <h3>发布您的留言</h3>
+    <section class="editor" id="board_editor">
+        <form method="post" id="form_board">
+            <div class="editor_inner">
+                <textarea placeholder="说点儿什么吧" rows="3" class="textarea_editor" name="message"></textarea>
+            </div>
+            <div class="editor_button">
+                <span class="emoji fl"></span>
+                <button type="submit" class="fr">发表</button>
+            </div>
+        </form>
+    </section>
+    <h3 >留言</h3>
+    <div>
+        {{if board.length !== 0}}
+        {{each board}}
+        <section class="board_content">
+            <div class="board_avater">
+                <img src="{{$value.avater}}"/>
+            </div>
+            <div class="board_text">
+            <span>
+                {{$value.currentUser}}
+            </span>
+                <span>
+                {{$value.message}}
+            </span>
+                <span>
+                {{@$value.time}}
+                <a id="reply">回复</a>
+            </span>
+            </div>
+        </section>
+        {{/each}}
+        {{else}}
+        <span id="no_msg">—— 您还没有留言哦 ——</span>
+        {{/if}}
+    </div>
+</div>
+{{/block}}

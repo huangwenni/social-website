@@ -1,0 +1,87 @@
+<!-- 继承home_base.html -->
+{{extend '../_layouts/myHome_base.html'}}
+
+{{block 'home_content'}}
+<div class="content_inner">
+    <aside class="aside_container">
+        <div class="personal_information">
+            <div class="inner_title">
+                <h3>个人简介</h3>
+            </div>
+            <div id="infor_content">
+                <ul>
+                    <li><span><i></i> 个人介绍:</span>{{user.introduce}}</li>
+                    <li><span><i></i> 性别:</span>{{if user.gender === 1}}男{{else if user.gender === 0}}女{{else if user.gender === -1}}保密 {{/if}}</li>
+                    <li><span><i></i> 专业:</span>{{user.specialty}}</li>
+                </ul>
+                <div><a href="/personal/message">编辑个人资料<i>></i></a></div>
+            </div>
+        </div>
+        <div class="visitors">
+            <div class="inner_title">
+                <h3>最近访客</h3>
+            </div>
+            <div class="inner_visitors">
+                {{if myVisitor}}
+                {{each myVisitor}}
+                <span>
+                <img src="{{$value.avater}}"/>
+                </span>
+                {{/each}}
+                {{/if}}
+            </div>
+        </div>
+    </aside>
+
+    <section class="content_container">
+        <section class="editor">
+            <form id="form_home">
+                <div class="editor_inner">
+                    <textarea placeholder="说点儿什么吧" rows="3" class="textarea_editor" name="message"></textarea>
+                </div>
+                <div class="editor_button">
+                    <span class="emoji fl"></span>
+                    <button type="submit" class="fr">发表</button>
+                </div>
+            </form>
+        </section>
+        <section>
+            {{if message.length !== 0}}
+            {{each message}}
+            <section class="editor_content">
+                <div class="editor_user">
+                    <div>
+                        <span><img src="{{user.avater}}"/></span>
+                    </div>
+                    <div>
+                        <span><h3>{{user.userName}}</h3></span>
+                        <span>{{@$value.time}}</span>
+                        <span id="dropDown"><a></a></span>
+                    </div>
+                </div>
+                <div class="editor_message">
+                    <span>{{$value.message}}</span>
+                </div>
+                <div class="editor_bottom">
+                    <ul>
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
+                    </ul>
+                </div>
+            </section>
+            {{/each}}
+            {{else}}
+            <div id="myHome_img">
+                <img src="/images/myHome.png"/>
+            </div>
+            {{/if}}
+        </section>
+    </section>
+</div>
+{{/block}}
+
+
+
+

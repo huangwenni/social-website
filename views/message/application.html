@@ -1,0 +1,35 @@
+<!-- 继承base.html -->
+{{extend '../_layouts/base.html'}}
+
+{{block 'head'}}
+<link rel="stylesheet" href="/stylesheets/message.css"/>
+{{/block}}
+
+{{block 'content'}}
+<div class="main_container" id="msg_box">
+    <div class="inner_container appli">
+        <div id="appli_title"> 好友申请</div>
+        <div class="appli_box">
+            {{if application.length !== 0}}
+            {{each application}}
+            <div class="appli_content">
+                <span class="appli_delete">×</span>
+                <div class="appli_inner">
+                    <span><img src="{{$value.avater}}"/></span>
+                    <p id="passName">{{$value.userName}}</p>
+                    <p id="sig">" {{$value.signature}} "</p>
+                    <button id="{{$value.sendId}}" onclick="ly.msg.pass(this)">通过</button>
+                </div>
+            </div>
+            {{/each}}
+            {{else}}
+            <span id="no_appli">—— 您暂时还没有好友申请哦 ——</span>
+            {{/if}}
+        </div>
+    </div>
+</div>
+{{/block}}
+
+{{block 'script'}}
+<script src="/javascripts/message.js"></script>
+{{/block}}

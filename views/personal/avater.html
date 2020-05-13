@@ -1,0 +1,43 @@
+{{extend '../_layouts/personal_base.html'}}
+
+{{block 'style'}}
+<style type="text/css">
+    #myCenter{
+        background-color: #8a5b7e;
+        color: white;
+    }
+    #myAvater a{
+        background-color: #8a5b7e63;
+        color: white;
+    }
+</style>
+{{/block}}
+
+{{block 'session_content'}}
+<div class="session_box">
+    <div class="session_title">
+        <span><i></i>我的头像</span>
+    </div>
+    <div class="session_avater">
+        <div class="left_avater">
+            <form action="" id="form_avater" method="" enctype="multipart/form-data">
+                <div  id="label_avater">
+                    <div class="container" style="width: 180px;height: 180px">
+                        <img class="inner_img" src=""/>
+                    </div>
+                </div>
+                <label for="input_avater">
+                    <span id="choose">选择图片</span>
+                    <input type="file" accept="image/png,image/jpg,image/jpeg" name="avaterImg" id="input_avater" value="选择图片">
+                </label>
+            </form>
+        </div>
+        <div class="right_avater">
+            <div class="img_preview"></div>
+            <span id="p_text">预览头像</span>
+        </div>
+        <span id="renew_text">请选择图片上传：大小180 * 180像素支持JPG、PNG、JPEG格式，图片需小于2M</span>
+        <button id="renew" onclick="ly.per.upImg()">更新</button>
+    </div>
+</div>
+{{/block}}

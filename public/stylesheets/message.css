@@ -1,0 +1,103 @@
+#msg_box{
+    min-width: 1000px;
+}
+.appli{
+    margin-top: 30px;
+    height: 500px;
+    background-color: #edf3f2;
+    padding: 50px;
+    box-sizing: border-box;
+}
+#appli_title{
+    width: 100%;
+    height: 30px;
+    border-bottom: 2px solid #cfcdcd;
+    font-weight: bold;
+    color: #695e5e;
+    font-size: 1.07em;
+    margin-bottom: 5px;
+}
+#appli_title:before{
+    font-family: 'icomoon';
+    content: '\e972';
+    font-size: 0.93em;
+}
+.appli_box{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    height: 400px;
+}
+.appli_content{
+    width: 25%;
+    height: 210px;
+    box-sizing: border-box;
+    margin-top: 15px;
+    position: relative;
+}
+.appli_inner{
+    margin: 0 15px;
+    border: 1px solid #8a5b7e;
+    background-color: #f4dbe6;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+    height: 100%;
+}
+.appli_inner>p{
+    text-align: center;
+    margin-top: 10px;
+}
+.appli_inner>span{
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    margin: 15px auto;
+    border: 1px solid #e0bbbb;
+}
+.appli_inner>span>img{
+    border-radius: 40px;
+    width: 80px;
+    height: 80px;
+}
+.appli_inner>button{
+    width: 100px;
+    height: 25px;
+    display: block;
+    background-color: skyblue;
+    margin: 10px auto;
+    color: white;
+    cursor: pointer;
+}
+#passName{
+    color: #752a45
+}
+#sig{
+    color: #3e3e3e;
+    font-size: 0.86em;
+}
+#no_appli{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 350px;
+    color: #777777;
+}
+.appli_box::-webkit-scrollbar{
+    width: 3px;
+}
+.appli_box::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.2);
+}
+.appli_delete{
+    position: absolute;
+    font-size: 30px;
+    right:20px;
+    color: #3e3e3e;
+    width: 30px;
+    height: 30px;
+    display: block;
+    text-align: right;
+    cursor: pointer;
+}
