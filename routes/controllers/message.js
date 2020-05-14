@@ -29,7 +29,6 @@ exports.showAppli = (req, res)=> {
 exports.pass = (req, res)=> {
     let userId = req.session.user._id.toString();
     let sendId = req.body.sendId;
-    console.log(req.body);
     myFriendDB.update({userId}, {'$push': {friends: sendId}})
         .then(data => {
             return myFriendDB.update({userId:sendId},{'$push': {friends: userId}});
