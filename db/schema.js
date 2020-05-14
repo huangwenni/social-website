@@ -1,13 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+
 //用户信息的schema
 const userSchema = new Schema({
-    status:{
-        type:Number,
-        //是否可以评论，登录使用 0:没有权限限制 1：不可以评论 2：不可以登陆
-        enum:[0,1,2],
-        default:0
-    },
     avater:{
         type:String,
         default:'/images/avater.png'
@@ -63,15 +58,16 @@ const userSchema = new Schema({
         default:''
     },
     created_time:{
-        type:String,
-        // default:currentDate
+        type:Date,
+        default:Date.now
     },
 });
 
 //主页发布状态信息的Schema
 const messageSchema = new Schema({
     userId:{
-        type:String
+        type:String,
+        required:true
     },
     message:{
         type:String,
@@ -109,15 +105,19 @@ const boardSchema = new Schema({
 const indexCardSchema = new Schema({
     cardTitle:{
         type:String,
+        required:true
     } ,
+    userId:{
+        type:String,
+        required:true
+    },
     cardDescription:{
         type:String,
+        required:true
     },
     cardImg:{
         type:String
-    },
-    userId:{
-        type:String
+        required:true
     },
     created_time:{
         type:Date
@@ -128,6 +128,7 @@ const indexCardSchema = new Schema({
 const myFriendsSchema = new Schema({
     userId:{
         type:String,
+        required:true
     },
     friends:{
         type:Array
@@ -137,10 +138,12 @@ const myFriendsSchema = new Schema({
 //收藏的Schema
 const collectionSchema = new Schema({
     userId:{
-        type:String
+        type:String,
+        required:true
     },
     cardId:{
-        type:String
+        type:String,
+        required:true
     },
     created_time:{
         type:Date,
@@ -179,13 +182,16 @@ const postSchema = Schema({
 //聊天记录的Schema
 const chatSchema = Schema({
     sendId:{
-        type:String
+        type:String,
+        required:true
     },
     toId:{
-        type:String
+        type:String,
+        required:true
     } ,
     message:{
-        type:String
+        type:String,
+        required:true
     },
     created_time:{
         type:Date,
@@ -196,10 +202,12 @@ const chatSchema = Schema({
 //最近访客的Schema
 const visitorSchema = Schema({
     userId:{
-        type:String
+        type:String,
+        required:true
     },
     visitorId:{
-        type:String
+        type:String,
+        required:true
     },
     visitor_time:{
         type:Date,
@@ -211,6 +219,7 @@ const visitorSchema = Schema({
 const photoWallSchema = Schema({
     userId:{
         type:String,
+        required:true
     },
     photo:{
         type:Array,
@@ -220,10 +229,12 @@ const photoWallSchema = Schema({
 //好友申请的Schema，尚未通过申请并且未拒绝添加的好友存于此
 const addFriendSchema = Schema({
     sendId:{
-        type:String
+        type:String,
+        required:true
     },
     toId:{
-        type:String
+        type:String,
+        required:true
     },
 });
 
