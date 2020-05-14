@@ -40,7 +40,6 @@ exports.showCol = (req, res) => {
         });
 };
 exports.del = (req, res) => {
-    console.log(req.body);
     let colId = req.body.colId;
     colDB.del({cardId: colId}).then(data => {
         res.send({code: 0, msg: '删除收藏成功'})
