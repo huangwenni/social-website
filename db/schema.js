@@ -116,7 +116,7 @@ const indexCardSchema = new Schema({
         required:true
     },
     cardImg:{
-        type:String
+        type:String,
         required:true
     },
     created_time:{
