@@ -7,16 +7,6 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 
-const loginRouter = require('./routes/controllers/login');
-const indexRouter = require('./routes/controllers/index');
-const myHomeRouter = require('./routes/controllers/myHome');
-const homeRouter = require('./routes/controllers/home');
-const friendsRouter = require('./routes/controllers/friends');
-const collectionRouter = require('./routes/controllers/collection');
-const personalRouter = require('./routes/controllers/personal');
-const messageRouter = require('./routes/controllers/message');
-const postRouter = require('./routes/controllers/post');
-
 const webRouter = require('./routes/web_router');
 
 const app = express();
