@@ -32,17 +32,6 @@ app.use(session({
 
 app.use('/', webRouter);
 
-// app.use('/', loginRouter);
-// app.use('/index', indexRouter);
-// app.use('/myHome',myHomeRouter);
-// app.use('/home',homeRouter);
-// app.use('/friends',friendsRouter);
-// app.use('/collection',collectionRouter);
-// app.use('/personal',personalRouter);
-// app.use('/message',messageRouter);
-// app.use('/post',postRouter);
-
-
 //连接数据库
 mongoose.connect('mongodb://localhost:27017/mongoose_project',{
     useNewUrlParser: true,
