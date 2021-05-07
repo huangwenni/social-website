@@ -27,7 +27,7 @@
     "morgan": "~1.9.1",
     "multer": "^1.4.2",
     "socket.io": "^2.3.0",
-    "underscore": "^1.10.2",
+    "underscore": "^1.12.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
   },
